@@ -5,61 +5,55 @@ const mobile_menu=document.querySelector(".mobile-menu");
 const shopping_car=document.querySelector(".navbar-shopping-cart")
 const menu_car=document.querySelector(".product-detail");
 const secction=document.querySelector(".main-container")
+const description=document.querySelector('.description-product');
+const description_close=document.querySelector('.product-detail-close');
 const products=[
     {
         "name":"bike",
         "image":"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "price":250,
-
     },
     {
-        "name":"buzz toy",
-        "image":"https://m.media-amazon.com/images/I/71rL5zB1UZL._AC_SL1500_.jpg",
-        "price":50,
-
+        "name":"bike",
+        "image":"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "price":250,
     },
     {
-        "name":"house toy ",
-        "image":"https://secure.img1-cg.wfcdn.com/im/47579244/resize-h600-w600%5Ecompr-r85/2063/2063273/Dollhouses+%26+Accessories.jpg",
-        "price":25,
-
+        "name":"bike",
+        "image":"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "price":250,
     },
     {
-        "name":"soccer ball",
-        "image":"https://i.natgeofe.com/n/672b580d-0597-4e59-b57c-51f149bf92e8/80254.jpg",
-        "price":30,
-
+        "name":"bike",
+        "image":"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "price":250,
     },
     {
-        "name":"bat",
-        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBekEdASAlbgqg8a3ZS0aVo2PIBE7SoZQAmQ&usqp=CAU",
-        "price":20,
-
+        "name":"bike",
+        "image":"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "price":250,
     },
     {
-        "name":"hotwheels car ",
-        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThXSVuRisOXkrEJ6qZNlCKh0FwNMwXJib34ORUk0XspqhE6hJOszxnST-YNRQgX4p8ulk&usqp=CAU",
-        "price":15,
-
+        "name":"bike",
+        "image":"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "price":250,
     },
     {
-        "name":"barbie",
-        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXKHGRZwkjBR2hH6M7z6SspXWH4Rw2QHQ6Jw&usqp=CAU",
-        "price":25,
-
+        "name":"bike",
+        "image":"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "price":250,
     },
     {
-        "name":"max steel",
-        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq_69j5yf42Ety2SWGZnPR7tUu2CVwfwmHBA&usqp=CAU",
-        "price":30,
-
+        "name":"bike",
+        "image":"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "price":250,
     },
     {
-        "name":"blake blake",
-        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ84uokLJiQAdhmjA8yLTPKwqVgikW9Ra3iWw&usqp=CAU",
-        "price":10,
-
+        "name":"bike",
+        "image":"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "price":250,
     },
+   
 ]
 
 for(product of products){
@@ -83,7 +77,7 @@ name.innerHTML=product.name;
 
 const figure=document.createElement("figure");
 const img2=document.createElement("img");
-img2.setAttribute("src","./javascript-page/icons/bt_add_to_cart.svg");
+img2.setAttribute("src","./icons/bt_add_to_cart.svg");
 img2.setAttribute("alt","icon")
 
 figure.appendChild(img2);
@@ -97,6 +91,7 @@ product_info.appendChild(figure);
 product_card.appendChild(img);
 product_card.appendChild(product_info);
 cards.appendChild(product_card);
+cards.addEventListener("click",toggle_description)
 secction.appendChild(cards);
 
 }
@@ -121,6 +116,22 @@ secction.appendChild(cards);
 email.addEventListener('click',toggle_inactive);
 mobile.addEventListener('click',toggle_inactive_mobile);
 shopping_car.addEventListener("click",toggle_shop);
+description_close.addEventListener('click',toggle_close);
+
+function toggle_close(){
+    description.classList.toggle("inactive");
+    // const mobileClosed=mobile_menu.classList.contains("inactive");
+    // if(!mobileClosed){
+    //     mobile_menu.classList.add("inactive")
+    // }
+}
+function toggle_description(){
+    description.classList.toggle("inactive");
+    // const mobileClosed=mobile_menu.classList.contains("inactive");
+    // if(!mobileClosed){
+    //     mobile_menu.classList.add("inactive")
+    // }
+}
 
 function toggle_shop(){
     menu_car.classList.toggle("inactive");
