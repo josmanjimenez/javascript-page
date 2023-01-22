@@ -120,31 +120,37 @@ description_close.addEventListener('click',toggle_close);
 
 function toggle_close(){
     description.classList.toggle("inactive");
-    // const mobileClosed=mobile_menu.classList.contains("inactive");
-    // if(!mobileClosed){
-    //     mobile_menu.classList.add("inactive")
-    // }
+   
 }
 function toggle_description(){
     description.classList.toggle("inactive");
-    // const mobileClosed=mobile_menu.classList.contains("inactive");
-    // if(!mobileClosed){
-    //     mobile_menu.classList.add("inactive")
-    // }
+    const mobileClosed=mobile_menu.classList.contains("inactive");
+    const shopClosed=menu_car.classList.contains("inactive");
+
+    if(!mobileClosed || !shopClosed){
+        mobile_menu.classList.add("inactive");
+        menu_car.classList.add("inactive");
+    }
 }
 
 function toggle_shop(){
     menu_car.classList.toggle("inactive");
     const mobileClosed=mobile_menu.classList.contains("inactive");
-    if(!mobileClosed){
-        mobile_menu.classList.add("inactive")
+    const description_s=description.classList.contains("inactive");
+
+    if(!mobileClosed || !description_s){
+        mobile_menu.classList.add("inactive");
+        description_s=description.classList.add("inactive");
     }
 }
 function toggle_inactive_mobile(){
     mobile_menu.classList.toggle("inactive");
     const shopClosed=menu_car.classList.contains("inactive");
-    if(!shopClosed){
-        menu_car.classList.add("inactive")
+    const description_s=description.classList.contains("inactive");
+
+    if(!shopClosed || !description_s){
+        menu_car.classList.add("inactive");
+        description_s=description.classList.add("inactive");
     }
 }
 

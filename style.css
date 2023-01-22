@@ -284,7 +284,8 @@
   /* ///////////description//////////////// */
 
   .description-product{
-    width: 360px;
+    max-width: 360px;
+    min-width: 280px;
     padding-bottom: 24px;
     position: absolute;
     right: 0;
@@ -293,7 +294,7 @@
     box-shadow: #000000 0px 0px 1px;
   }
   .product-detail-close {
-    background: var(--white);
+    background: var(--hospital-green);
     width: 14px;
     height: 14px;
     position: absolute;
